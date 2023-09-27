@@ -3,6 +3,7 @@
 Official [Confluent for Kubernetes documentation](https://docs.confluent.io/operator/current/overview.html).
 
 Confluent Component Images available here: https://hub.docker.com/u/confluentinc
+
 Confluent Component IronBank Images available here:https://repo1.dso.mil/dsop/confluent
 
 Watch the walkthrough here: https://youtu.be/qepFNPhrL08
