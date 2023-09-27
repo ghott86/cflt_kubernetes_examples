@@ -4,11 +4,11 @@ Official [Confluent for Kubernetes documentation](https://docs.confluent.io/oper
 
 Confluent Component Images available here: https://hub.docker.com/u/confluentinc
 
-Watch the walkthrough: https://youtu.be/qepFNPhrL08
+Watch the walkthrough here: https://youtu.be/qepFNPhrL08
 
 ## Prerequisites
 
-The following prerequisites are assumed for all secnario workflows:
+The following prerequisites are assumed for all scenario workflows:
 
 * A Kubernetes cluster - any CNCF conformant version
 * Helm 3 installed on your local machine
@@ -25,12 +25,12 @@ The following prerequisites are assumed for all secnario workflows:
 
 Note: There are several ways to provision Confluent Platform (security, no security, auto generated certs, etc). The quickest way to prototype with services is to setup with no security first.
 
-If required, you will need to make changes to the image locations, openshift domain, and namespaces, etc.
+If required, you will need to make changes to the image locations, OpenShift domain, and namespaces, etc.
 
 ---
 ---
 
-# Security considerations for Red Hat Openshift
+# Security considerations for Red Hat OpenShift
 
 ## Pod Security
 
@@ -45,7 +45,7 @@ You've got two options to align with the Security Context Constraint (SCC) needs
 
 For the quick start below, we'll use option 1, default SCC policy.
 
-In every Confluent component CustomResource, the `podSecurityContext` attribute is added; example below:
+How is this achieved? In every Confluent component CustomResource, the `podSecurityContext` attribute is added; example below:
 
 ```
 vi $TUTORIAL_HOME/cflt_examples/security/openshift-security/confluent-platform-with-defaultSCC.yaml
@@ -87,11 +87,15 @@ spec:
      ```
      Confluent Platform components are installed as custom resources (CRs). 
 
-     You can configure all Confluent Platform components as custom resources. However, in this example, all components are configured in a single file and deployed all at once with one ``kubectl apply`` command.
+     You can configure all Confluent Platform components as custom resources. However, in this 
+     example, all components are configured in a single file and deployed all at once with one 
+     ``kubectl apply`` command.
 
-     The entire Confluent Platform is configured in one configuration file: $TUTORIAL_HOME/cflt_examples/security/openshift-security/confluent-platform-with-defaultSCC.yaml
+     The entire Confluent Platform is configured in one configuration file: 
+     $TUTORIAL_HOME/cflt_examples/security/openshift-security/confluent-platform-with-defaultSCC.yaml
 
-     In this configuration file, there is a custom Resource configuration spec for each Confluent Platform component - replicas, image to use, resource allocations.
+     In this configuration file, there is a custom Resource configuration spec for each 
+     Confluent Platform component - replicas, image to use, resource allocations.
      ```
 7. Deploy Confluent Platform:
      ```
@@ -113,7 +117,8 @@ spec:
 
 1. Review sample producer application used for validation:
      ```
-     The producer app is packaged and deployed as a pod on Kubernetes. The required topic is defined as a KafkaTopic custom resource in $TUTORIAL_HOME/cflt_examples/quickstart-deploy/producer-app-data.yaml
+     The producer app is packaged and deployed as a pod on Kubernetes. The required topic is 
+     defined as a KafkaTopic custom resource in $TUTORIAL_HOME/cflt_examples/quickstart-deploy/producer-app-data.yaml
      ```
 2. Deploy the producer app:
      ```
@@ -129,7 +134,8 @@ spec:
      ```
 5. Validate functionality:
      ```
-     Check that the ``elastic-0`` topic was created and that messages are being produced to the topic.
+     Check that the ``elastic-0`` topic was created and that messages are being produced 
+     to the topic.
      ```
 
 ---
